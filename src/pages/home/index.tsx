@@ -11,7 +11,6 @@ import { Helmet } from "react-helmet";
 import Header from "../../components/header";
 import { PAGE_TITLE_HOME } from "../../utils/constants";
 import Subshreddits from "../../components/subshreddits";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 interface ResponseData {
@@ -55,16 +54,6 @@ const Home: FC = () => {
       return setPosts(finalData.data.children);
     }
   };
-  const notify = () =>
-    toast("🦄 Wow so easy!", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
 
   const handleLearnMore = (selectedData: Data) => {
     history.push("/post/details", selectedData);
